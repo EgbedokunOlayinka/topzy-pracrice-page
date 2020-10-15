@@ -1,0 +1,236 @@
+@import "./node_modules/rfs/scss.scss";
+
+// color variables
+$bg: #3e2093;
+$pink: #fa949d;
+$text: #101038;
+$text-two: #6a6b94;
+$grey: #f9f9fb;
+
+// font variables
+$lato: "Lato", sans-serif;
+$poppins: "Poppins", sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  //   width: 10%;
+  height: auto;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  //   border: 1px solid red;
+}
+
+*:focus {
+  border: 2px solid $pink !important;
+  background: white !important;
+}
+
+.service:hover {
+  color: $pink !important;
+  border: 2px solid $pink !important;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: $poppins;
+  font-size: 100%;
+  background-color: $bg;
+  color: white;
+
+  .container {
+    max-width: 600px;
+    // border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    @include margin-top(2rem);
+    @include margin-bottom(3rem);
+
+    @media (max-width: 600px) {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .page-head {
+      text-align: center;
+    }
+
+    .page-sub {
+      text-align: center;
+      @include margin-top(1rem);
+    }
+
+    .flex-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include margin-top(2rem);
+
+      @media (max-width: 600px) {
+        display: block;
+      }
+
+      div {
+        text-align: center;
+
+        @media (max-width: 600px) {
+          display: block;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          @include font-size(0.85rem);
+        }
+      }
+    }
+
+    .form-container {
+      background-color: white;
+      @include margin-top(2rem);
+      @include rfs(8px, border-radius);
+      color: $text;
+      @include padding-top(2rem);
+      @include padding-bottom(2rem);
+      @include padding-right(2.5rem);
+      @include padding-left(2.5rem);
+
+      @media (max-width: 600px) {
+        @include margin-top(3rem);
+      }
+
+      .head {
+        // font-weight: 500;
+        @include font-size(0.9rem);
+      }
+
+      .page-form {
+        @include margin-top(1rem);
+
+        .flex-two {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          @include rfs(3rem, grid-gap);
+          //   border: 1px solid black;
+
+          @media (max-width: 600px) {
+            display: block;
+          }
+
+          .left {
+            // border: 1px solid black;
+
+            .page-input {
+              display: block;
+              width: 100%;
+              @include padding-left(1rem);
+              @include padding-right(1rem);
+              @include padding-top(0.75rem);
+              @include padding-bottom(0.75rem);
+              @include margin-bottom(1.15rem);
+              border: 2px solid transparent;
+              @include rfs(5px, border-radius);
+              background: #f9f9fb;
+              color: $text;
+            }
+
+            label {
+              @include font-size(0.85rem);
+            }
+          }
+
+          .right {
+            // border: 1px solid red;
+            // display: grid;
+            // grid-template-rows: 1.1fr 8.9fr;
+
+            label {
+              @include font-size(0.85rem);
+            }
+
+            .big-input {
+              display: block;
+              width: 100%;
+              @include padding-left(1rem);
+              @include padding-right(1rem);
+              @include padding-top(0.75rem);
+              @include padding-bottom(0.75rem);
+              @include margin-bottom(1rem);
+              border: 2px solid transparent;
+              @include rfs(5px, border-radius);
+              background: #f9f9fb;
+              font-family: $poppins;
+              color: $text;
+
+              ::placeholder {
+                font-family: $poppins;
+              }
+            }
+          }
+        }
+
+        .service-head {
+          @include margin-top(1rem);
+        }
+
+        .flex-four {
+          display: flex;
+          color: $text-two;
+          justify-content: space-between;
+          @include font-size(0.85rem);
+          @include margin-top(1rem);
+
+          @media (max-width: 600px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            @include font-size(0.75rem);
+            text-align: center;
+          }
+
+          .service {
+            cursor: pointer;
+            background: $grey;
+            @include padding-top(0.5rem);
+            @include padding-bottom(0.5rem);
+            @include padding-right(1rem);
+            @include padding-left(1rem);
+            @include rfs(8px, border-radius);
+            border: 2px solid transparent;
+            display: grid;
+            align-items: center;
+          }
+        }
+
+        .form-btn {
+          @include margin-top(2.5rem);
+          background: $pink;
+          color: white;
+          font-family: $poppins;
+          @include padding-top(0.75rem);
+          @include padding-bottom(0.75rem);
+          @include padding-right(3rem);
+          @include padding-left(3rem);
+          @include rfs(8px, border-radius);
+          border: transparent;
+          @include font-size(0.85rem);
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+
+          :hover {
+            background: #c4747b;
+          }
+        }
+      }
+    }
+  }
+}
